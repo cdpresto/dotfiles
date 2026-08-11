@@ -1,0 +1,14 @@
+# ~/.config/systemd/user/rclone-gdrive.service
+[Unit]
+Description=rclone mount gdrive
+After=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/rclone mount gdrive: %h/GoogleDrive --vfs-cache-mode writes --rc --rc-addr 127.0.0.1:5574
+ExecStop=/bin/fusermount -u %h/GoogleDrive
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

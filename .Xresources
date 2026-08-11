@@ -1,0 +1,428 @@
+! XTerm resources
+!
+! Remember to run `xrdb -merge ~/.Xresources` after changing anything.
+! (Note: -merge is safer than the old `xrdb < .Xresources`, since it
+!  updates the running resource DB without wiping unrelated entries
+!  set by other apps.)
+!
+! Tavis Ormandy <taviso@gmail.com>
+! Set the default UI font (menus, toolbar, etc)
+XTerm*XftFont:                  DejaVu Sans Mono UI:size=10:antialias=true:style=Regular
+! set the default font
+XTerm*faceName: DejaVu Sans Mono
+! NOTE: "Segoe UI" and "Consolas" (used below in vt100.faceName) are
+! Microsoft fonts and are unlikely to be installed on Fedora unless you
+! explicitly added them. If menu text or terminal text looks like a
+! generic fallback font instead of what you expect, run:
+!   fc-list | grep -i consolas
+!   fc-list | grep -i "segoe"
+! and if nothing prints, xterm is silently substituting a default font.
+! Consider swapping to something confirmed installed, e.g.:
+!   XTerm*vt100.faceName: xft:DejaVu Sans Mono:size=14:antialias=true
+
+! Color of UI Components
+XTerm*.SimpleMenu.background:   #ffffff
+XTerm*.SimpleMenu.foreground:   #000000
+! Tone down the Xaw3D effect.
+XTerm*shapeStyle:               Rectangle
+XTerm*beNiceToColormap:         false
+XTerm*relief:                   None
+XTerm*highlightThickness:       0
+! Dont automatically jump to the bottom on output, but do on keypress.
+XTerm*scrollTtyOutput:          false
+XTerm*scrollKey:                true
+XTerm*scrollBar:                false
+XTerm*eightBitInput:            false
+XTerm*cursorBlink:              true
+! Dont allow mouse ops - it can be enabled in the view Menu at runtime.
+! The reason is it breaks copy/paste if an application requests mouse events,
+! because the application gets the event instead of XTerm.
+XTerm*allowMouseOps:            false
+! Dont change my title by default, this can be re-enabled from the menu.
+XTerm*allowTitleOps:            false
+XTerm*allowFontOps:             false
+! Mouse cursor configuration, I prefer to keep it simple.
+XTerm*pointerColor:             white
+XTerm*pointerColorBackground:   black
+XTerm*pointerShape:             left_ptr
+! added by charles
+Xcursor.size: 48
+Xcursor.theme: Adwaita
+
+! Window size and position (single source of truth now -- the old
+! duplicate `xterm*geometry: 50x10+500+500` conflicted with
+! vt100.geometry below and has been removed)
+XTerm*vt100.geometry:           100x30
+
+! Scrollback buffer
+xterm*saveLines: 10000
+! end of what charles added
+
+! Only select text, not empty space around it.
+XTerm*highlightSelection:       true
+
+! The distance between the edge of the screen and the characters.
+XTerm*vt100.internalBorder:     6
+
+! The border around elements.
+XTerm*.BorderColor:             #ffffff
+XTerm*vt100.BorderColor:        #d0d0d0
+XTerm*BorderWidth:              3
+
+! Menu Names, I dont like the default verbose names.
+XTerm*.mainMenu.label:          File
+XTerm*.vtMenu.label:            Options
+XTerm*.fontMenu.label:          View
+
+! You can rename menu entries, like this, I dont know why the menubar
+! is called a "toolbar", probably historical reasons.
+XTerm*.mainMenu.toolbar.label:  Menubar
+
+! Adjust how the active menu item looks
+XTerm*.SimpleMenu.*.shadowWidth: 3
+XTerm*.SimpleMenu.*.topShadowPixel: SkyBlue
+XTerm*.SimpleMenu.*.bottomShadowPixel: LightSkyBlue
+
+! Try to hide the useless title displayed at the top of menus, I know what
+! menu it is because I just clicked it.
+XTerm*.*.menuLabel.vertSpace:   0
+XTerm*.*.menuLabel.foreground:  #ffffff
+XTerm*.*.menuLabel.XftFont:     Courier:size=0
+
+! Space around menu entries.
+XTerm*.SimpleMenu.*.topMargin:  0
+XTerm*.SimpleMenu.*.bottomMargin: 0
+XTerm*.SimpleMenu.*.leftMargin: 32
+XTerm*.SimpleMenu.*.rightMargin: 64
+
+! Space around the checkmark in the menus.
+XTerm*.SimpleMenu.*.leftWhitespace: 16
+
+! Trim vertical padding around the toolbar, all elements have a form.
+XTerm*Form.menubar.vSpace:      0
+XTerm*Form.menubar.vertDistance: 0
+
+! Fonts
+XTerm*vt100.faceName:           xft:DejaVu Sans Mono:size=18:antialias=true:style=Regular
+XTerm*vt100.boldFont:           xft:DejaVu Sans Mono:size=18:antialias=true:style=Bold
+
+! Size and Title
+XTerm*title:                    Terminal
+XTerm*iconHint:                 /home/taviso/.icons/computer_x11.xpm
+
+! I like bold items to be in bright white, and bold text to actually use
+! the bright ANSI slot (this is what makes tw=1;30 in LS_COLORS render as
+! a legible gray instead of invisible black -- see notes per-theme below).
+XTerm*veryBoldColors:       4
+XTerm*colorBDMode:          true
+XTerm*colorBD:              #ffffff
+XTerm*colorRV:              #ffffff
+XTerm*boldColors:           true
+
+! I can see a small line between box characters, this fixes it.
+XTerm*forceBoxChars:        true
+XTerm*vt100.scaleHeight:    1.04
+! This (or similar id) is required for Sixel support.
+XTerm*decTerminalID:        vt382
+XTerm*termName:              xterm-256color
+
+! =====================================================================
+! DEFAULT COLOR SCHEME (fallback for any xterm launched without -class,
+! e.g. your fvwm "&Default" menu entry). Same values you had before.
+! 0-7:  Black, Red, Green, Yellow, Blue, Purple, Cyan, White
+! 8-15: Bright Black, Bright Red, ...
+! =====================================================================
+XTerm*vt100.background:     #212121
+XTerm*vt100.foreground:     #80FF80
+XTerm*cursorColor:          #ffffff
+XTerm*color0:               #212121
+XTerm*color8:               #7f7f7f
+XTerm*color1:               #A00000
+XTerm*color9:               #FF0000
+XTerm*color2:               #00A000
+XTerm*color10:              #00FF00
+XTerm*color3:               #A0A000
+XTerm*color11:              #FFFF00
+XTerm*color4:               #0066cc
+XTerm*color12:              #5C5CFF
+XTerm*color5:               #A000A0
+XTerm*color13:              #FF00FF
+XTerm*color6:               #00A0A0
+XTerm*color14:              #00FFFF
+XTerm*color7:               #C0C0C0
+XTerm*color15:              #ffffff
+
+! =====================================================================
+! PER-THEME PALETTES
+! Each block is keyed to a unique -class so it only applies to xterm
+! windows launched with that class (see the fvwm menu snippet below).
+! Every palette below was chosen/checked so that LS_COLORS values render
+! legibly against that theme background:
+!   di=1;34 (dir)      -> bold blue   -> renders as color12
+!   ln=1;36 (symlink)  -> bold cyan   -> renders as color14
+!   so=1;35 (socket)   -> bold magenta-> renders as color13
+!   pi=1;33 (pipe)     -> bold yellow -> renders as color11
+!   sg=1;32 (setgid)   -> bold green  -> renders as color10
+!   su=1;30 (setuid)   -> bold black  -> renders as color8
+!   tw=1;30 (sticky/ow)-> bold black  -> renders as color8
+!   bd=1;33;41 / cd=1;33;40 -> yellow fg on red/black bg -> color11 on color1/color0
+! =====================================================================
+
+! --- Solarized Dark ---
+XTermSolarizedDark*background:  #002b36
+XTermSolarizedDark*foreground:  #839496
+XTermSolarizedDark*cursorColor: #93a1a1
+XTermSolarizedDark*color0:      #073642
+XTermSolarizedDark*color1:      #dc322f
+XTermSolarizedDark*color2:      #859900
+XTermSolarizedDark*color3:      #b58900
+XTermSolarizedDark*color4:      #268bd2
+XTermSolarizedDark*color5:      #d33682
+XTermSolarizedDark*color6:      #2aa198
+XTermSolarizedDark*color7:      #eee8d5
+XTermSolarizedDark*color8:      #002b36
+XTermSolarizedDark*color9:      #cb4b16
+XTermSolarizedDark*color10:     #586e75
+XTermSolarizedDark*color11:     #657b83
+XTermSolarizedDark*color12:     #839496
+XTermSolarizedDark*color13:     #6c71c4
+XTermSolarizedDark*color14:     #93a1a1
+XTermSolarizedDark*color15:     #fdf6e3
+XTermSolarizedDark*faceName:    DejaVu Sans Mono
+XTermSolarizedDark*faceSize:    24
+
+! --- Gruvbox Dark ---
+XTermGruvboxDark*background:    #282828
+XTermGruvboxDark*foreground:    #ebdbb2
+XTermGruvboxDark*cursorColor:   #ebdbb2
+XTermGruvboxDark*color0:        #282828
+XTermGruvboxDark*color1:        #cc241d
+XTermGruvboxDark*color2:        #98971a
+XTermGruvboxDark*color3:        #d79921
+XTermGruvboxDark*color4:        #458588
+XTermGruvboxDark*color5:        #b16286
+XTermGruvboxDark*color6:        #689d6a
+XTermGruvboxDark*color7:        #a89984
+XTermGruvboxDark*color8:        #928374
+XTermGruvboxDark*color9:        #fb4934
+XTermGruvboxDark*color10:       #b8bb26
+XTermGruvboxDark*color11:       #fabd2f
+XTermGruvboxDark*color12:       #83a598
+XTermGruvboxDark*color13:       #d3869b
+XTermGruvboxDark*color14:       #8ec07c
+XTermGruvboxDark*color15:       #ebdbb2
+XTermGruvboxDark*faceName:    DejaVu Sans Mono
+XTermGruvboxDark*faceSize:    24
+
+! --- Nord ---
+XTermNord*background:           #2e3440
+XTermNord*foreground:           #d8dee9
+XTermNord*cursorColor:          #d8dee9
+XTermNord*color0:               #3b4252
+XTermNord*color1:               #bf616a
+XTermNord*color2:               #a3be8c
+XTermNord*color3:               #ebcb8b
+XTermNord*color4:               #81a1c1
+XTermNord*color5:               #b48ead
+XTermNord*color6:               #88c0d0
+XTermNord*color7:               #e5e9f0
+XTermNord*color8:               #4c566a
+XTermNord*color9:               #bf616a
+XTermNord*color10:              #a3be8c
+XTermNord*color11:              #ebcb8b
+XTermNord*color12:              #81a1c1
+XTermNord*color13:              #b48ead
+XTermNord*color14:              #8fbcbb
+XTermNord*color15:              #eceff4
+XTermNord*faceName:             DejaVu Sans Mono
+XTermNord*faceSize:             24
+
+! --- Solarized Light ---
+XTermSolarizedLight*background: #fdf6e3
+XTermSolarizedLight*foreground: #586e75
+XTermSolarizedLight*cursorColor:#586e75
+XTermSolarizedLight*color0:     #073642
+XTermSolarizedLight*color1:     #dc322f
+XTermSolarizedLight*color2:     #859900
+XTermSolarizedLight*color3:     #b58900
+XTermSolarizedLight*color4:     #268bd2
+XTermSolarizedLight*color5:     #d33682
+XTermSolarizedLight*color6:     #2aa198
+XTermSolarizedLight*color7:     #eee8d5
+XTermSolarizedLight*color8:     #002b36
+XTermSolarizedLight*color9:     #cb4b16
+XTermSolarizedLight*color10:    #586e75
+XTermSolarizedLight*color11:    #657b83
+XTermSolarizedLight*color12:    #268bd2
+XTermSolarizedLight*color13:    #6c71c4
+XTermSolarizedLight*color14:    #93a1a1
+XTermSolarizedLight*color15:    #fdf6e3
+XTermSolarizedLight*faceName:   DejaVu Sans Mono
+XTermSolarizedLight*faceSize:   24
+
+! --- Tango (punched up: true black bg, bright green fg, brightened
+!     color8 vs. the stock Tango value so `su`/`tw` stay legible on
+!     pure black) ---
+XTermTango*background:          #000000
+XTermTango*foreground:          #00FF00
+XTermTango*cursorColor:         #00FF00
+XTermTango*color0:              #2e3436
+XTermTango*color1:              #cc0000
+XTermTango*color2:              #4e9a06
+XTermTango*color3:              #c4a000
+XTermTango*color4:              #3465a4
+XTermTango*color5:              #75507b
+XTermTango*color6:              #06989a
+XTermTango*color7:              #d3d7cf
+XTermTango*color8:              #7f7f7f
+XTermTango*color9:              #ef2929
+XTermTango*color10:             #8ae234
+XTermTango*color11:             #fce94f
+XTermTango*color12:             #729fcf
+XTermTango*color13:             #ad7fa8
+XTermTango*color14:             #34e2e2
+XTermTango*color15:             #eeeeec
+XTermTango*faceName:            DejaVu Sans Mono
+XTermTango*faceSize:            24
+
+! =====================================================================
+! BOLD / SATURATED BACKGROUND THEMES
+! These use your original saturated bg/fg picks (Greenie, Ole Yeller,
+! Red, Powder). Unlike the muted themes above, a fully saturated
+! background shares a hue with some LS_COLORS entries (green bg vs.
+! green "sg" text, blue bg vs. blue "di" text, yellow bg vs. yellow
+! "pi"/"bd"/"cd" text) -- same-hue text on a same-hue bg goes nearly
+! invisible no matter the exact shade. Since ls only cares about ANSI
+! slot NUMBERS, not their traditional color name, the colliding slots
+! below are deliberately reassigned to a contrasting hue for THIS
+! theme only, purely for visibility. This is why, for example, color10 (the
+! slot that LS_COLORS sg=1;32 renders through) is not very "green" in
+! Greenie -- it cannot be and still show up.
+! =====================================================================
+
+! --- Greenie ---
+XTermGreenie*background:        #048c14
+XTermGreenie*foreground:        #839496
+XTermGreenie*cursorColor:       #ffffff
+XTermGreenie*color0:            #023309
+XTermGreenie*color1:            #ff5555
+XTermGreenie*color2:            #0b5e1a
+XTermGreenie*color3:            #ffd447
+XTermGreenie*color4:            #4aa3ff
+XTermGreenie*color5:            #ff6ec7
+XTermGreenie*color6:            #45e0d0
+XTermGreenie*color7:            #d0d0d0
+XTermGreenie*color8:            #b0bec5
+XTermGreenie*color9:            #ff7b7b
+XTermGreenie*color10:           #e6ff8f
+XTermGreenie*color11:           #ffe97a
+XTermGreenie*color12:           #7ec8ff
+XTermGreenie*color13:           #ffa3e0
+XTermGreenie*color14:           #7bfff0
+XTermGreenie*color15:           #ffffff
+XTermGreenie*faceName:          DejaVu Sans Mono
+XTermGreenie*faceSize:          24
+
+! --- Ole Yeller (light bg -- bright slots darkened, not lightened,
+!     so they do not wash out against the pale yellow) ---
+XTermOleYeller*background:      #FBFA6B
+XTermOleYeller*foreground:      #000000
+XTermOleYeller*cursorColor:     #000000
+XTermOleYeller*color0:          #1a1a1a
+XTermOleYeller*color1:          #b30000
+XTermOleYeller*color2:          #1f7a1f
+XTermOleYeller*color3:          #8a6d00
+XTermOleYeller*color4:          #003f8a
+XTermOleYeller*color5:          #8a005c
+XTermOleYeller*color6:          #006666
+XTermOleYeller*color7:          #333333
+XTermOleYeller*color8:          #4d4d33
+XTermOleYeller*color9:          #d40000
+XTermOleYeller*color10:         #0f5c0f
+XTermOleYeller*color11:         #6b5400
+XTermOleYeller*color12:         #0047ab
+XTermOleYeller*color13:         #a3006b
+XTermOleYeller*color14:         #007a7a
+XTermOleYeller*color15:         #000000
+XTermOleYeller*faceName:        DejaVu Sans Mono
+XTermOleYeller*faceSize:        24
+
+! --- Red ---
+XTermRed*background:            #8B0000
+XTermRed*foreground:            #E0E0E0
+XTermRed*cursorColor:           #ffffff
+XTermRed*color0:                #330000
+XTermRed*color1:                #ff4d4d
+XTermRed*color2:                #4caf50
+XTermRed*color3:                #e0b000
+XTermRed*color4:                #4d79ff
+XTermRed*color5:                #d966ff
+XTermRed*color6:                #4dd0e1
+XTermRed*color7:                #d0d0d0
+XTermRed*color8:                #cfcfcf
+XTermRed*color9:                #ff6666
+XTermRed*color10:               #7CFC00
+XTermRed*color11:               #ffd60a
+XTermRed*color12:               #6ea8ff
+XTermRed*color13:               #ff8cff
+XTermRed*color14:               #80e8f0
+XTermRed*color15:               #ffffff
+XTermRed*faceName:              DejaVu Sans Mono
+XTermRed*faceSize:              24
+
+! --- Powder (light bg -- same darkening approach as Ole Yeller;
+!     color12 in particular is pushed to a very dark navy so blue
+!     dirs do not disappear against the powder-blue background) ---
+XTermPowder*background:         #99ccff
+XTermPowder*foreground:         #FFFF00
+XTermPowder*cursorColor:        #000000
+XTermPowder*color0:             #1a1a1a
+XTermPowder*color1:             #a30000
+XTermPowder*color2:             #1f7a1f
+XTermPowder*color3:             #8a6d00
+XTermPowder*color4:             #002d5c
+XTermPowder*color5:             #660066
+XTermPowder*color6:             #004d4d
+XTermPowder*color7:             #333333
+XTermPowder*color8:             #33475c
+XTermPowder*color9:             #cc0000
+XTermPowder*color10:            #0f5c1f
+XTermPowder*color11:            #6b5400
+XTermPowder*color12:            #001a4d
+XTermPowder*color13:            #800080
+XTermPowder*color14:            #006666
+XTermPowder*color15:            #000000
+XTermPowder*faceName:           DejaVu Sans Mono
+XTermPowder*faceSize:           24
+
+!  XTerm Translations, i.e. keyboard remapping.
+!
+! Notes:
+!   ~       means that that modifier must not be asserted.
+!   !       means that the listed modifiers must be in the correct state and
+!               no other modifiers can be asserted.
+!   None    means no modifiers can be asserted.
+!   :       directs the Intrinsics to apply any standard modifiers in the event.
+!   ^       is an abbreviation for the Control modifier.
+!   $       is an abbreviation for Meta
+!
+! Example:
+!   No modifiers:                          None <event> detail
+!   Any modifiers:                              <event> detail
+!   Only these modifiers:           ! mod1 mod2 <event> detail
+!   These modifiers and any others:   mod1 mod2 <event> detail
+!
+! Below:
+!
+! - I have some old apps that use Alt-F4, but thats sometimes difficult to
+!       press so Ctrl-Shift-F4 does the same thing.
+! - Ctrl-MouseWheel can be used to increase and descrease font size.
+! - Ctrl-I is totally useless, because it is literally impossible for
+!       applications to differentiate it from Tab. You can remap it to some
+!       other harder-to-press keybinding here, I use it for Italics in
+!       wordperfect.
+XTerm*vt100.translations:   #override           \n\
+    Ctrl Shift <Key>F4:     string("\033[1;3S") \n\
+  ! Ctrl <Btn4Up>:          larger-vt-font()    \n\
+  ! Ctrl <Btn5Up>:          smaller-vt-font()   \n\
+    ^<Key>I:                string("\014")      \n
