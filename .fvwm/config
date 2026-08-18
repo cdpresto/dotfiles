@@ -312,6 +312,7 @@ AddToMenu   MenuXterms "XTerm Variants" Title
 #+ "&Solarized Dark" Exec exec xme XTerm term -bg '#002b36' -fg '#839496' -T "Solarized Dark"
 + "&Solarized Dark" Exec exec xterm -class XTermSolarizedDark -name XTermSolarizedDark -T "Solarized Dark"
 #+ "&Dracula" Exec exec xterm -bg '#282a36' -fg '#f8f8f2' -T "Dracula"
++ "&Dracula" Exec exec xterm -class XTermDracula -name XTermDracula -T "Dracula"
 #+ "&Solarized Light" Exec exec xterm -bg '#fdf6e3' -fg '#586e75' -T "Solarized Light"
 + "&Solarized Light" Exec exec xterm -class XTermSolarizedLight -name XTermSolarizedLight  -T "Solarized Light"
 #+ "&Monokai" Exec exec xterm -bg '#272822' -fg '#f8f8f2' -T "Monokai"
@@ -328,6 +329,8 @@ AddToMenu   MenuXterms "XTerm Variants" Title
 + "&Ole Yeller"  Exec exec xterm -class XTermOleYeller -name XTermOleYeller -T "Ole Yeller"
 + "&Red"         Exec exec xterm -class XTermRed -name XTermRed -T "Red"
 + "&Powder"      Exec exec xterm -class XTermPowder -name XTermPowder -T "Powder"
++ "&TokyoNight"      Exec exec xterm -class XTermTokyoNight -name XTermTokyoNight -T "Tokyo Night"
++ "&Midnight"      Exec exec xterm -class XTermMidnight -name XTermMidnight -T "Midnight"
 
 # --- Fun Menu ---
 DestroyMenu MenuFun

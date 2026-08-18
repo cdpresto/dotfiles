@@ -168,6 +168,30 @@ XTerm*color15:              #ffffff
 !   bd=1;33;41 / cd=1;33;40 -> yellow fg on red/black bg -> color11 on color1/color0
 ! =====================================================================
 
+! --- Dracula  ---
+XTermDracula*background:        #282a36
+XTermDracula*foreground:        #f8f8f2
+XTermDracula*cursorColor:       #f8f8f2
+XTermDracula*color0:            #21222c
+XTermDracula*color1:            #ff5555
+XTermDracula*color2:            #50fa7b
+XTermDracula*color3:            #f1fa8c
+XTermDracula*color4:            #bd93f9
+XTermDracula*color5:            #ff79c6
+XTermDracula*color6:            #8be9fd
+XTermDracula*color7:            #f8f8f2
+XTermDracula*color8:            #6272a4
+XTermDracula*color9:            #ff6e6e
+XTermDracula*color10:           #69ff94
+XTermDracula*color11:           #ffffa5
+XTermDracula*color12:           #d6acff
+XTermDracula*color13:           #ff92df
+XTermDracula*color14:           #a4ffff
+XTermDracula*color15:           #ffffff
+XTermDracula*faceName:          DejaVu Sans Mono
+XTermDracula*faceSize:          24
+
+
 ! --- Solarized Dark ---
 XTermSolarizedDark*background:  #002b36
 XTermSolarizedDark*foreground:  #839496
@@ -394,6 +418,55 @@ XTermPowder*color14:            #006666
 XTermPowder*color15:            #000000
 XTermPowder*faceName:           DejaVu Sans Mono
 XTermPowder*faceSize:           24
+
+!     Tokyo Night — deep navy-blue background, popular scheme, good contrast:
+XTermTokyoNight*background:        #1a1b26
+XTermTokyoNight*foreground:        #c0caf5
+XTermTokyoNight*cursorColor:       #c0caf5
+XTermTokyoNight*color0:            #15161e
+XTermTokyoNight*color1:            #f7768e
+XTermTokyoNight*color2:            #9ece6a
+XTermTokyoNight*color3:            #e0af68
+XTermTokyoNight*color4:            #7aa2f7
+XTermTokyoNight*color5:            #bb9af7
+XTermTokyoNight*color6:            #7dcfff
+XTermTokyoNight*color7:            #a9b1d6
+XTermTokyoNight*color8:            #414868
+XTermTokyoNight*color9:            #f7768e
+XTermTokyoNight*color10:           #9ece6a
+XTermTokyoNight*color11:           #e0af68
+XTermTokyoNight*color12:           #7aa2f7
+XTermTokyoNight*color13:           #bb9af7
+XTermTokyoNight*color14:           #7dcfff
+XTermTokyoNight*color15:           #c0caf5
+XTermTokyoNight*faceName:          DejaVu Sans Mono
+XTermTokyoNight*faceSize:          24
+
+!   ----   Midnight Blue ----
+XTermMidnight*background:          #0a1128
+XTermMidnight*foreground:          #e6e8f0
+XTermMidnight*cursorColor:         #ffffff
+XTermMidnight*color0:              #0a1128
+XTermMidnight*color1:              #ff6b6b
+XTermMidnight*color2:              #6bff8f
+XTermMidnight*color3:              #ffd166
+XTermMidnight*color4:              #4a7fff
+XTermMidnight*color5:              #d66bff
+XTermMidnight*color6:              #66e0ff
+XTermMidnight*color7:              #c8ceed
+XTermMidnight*color8:              #3a4270
+XTermMidnight*color9:              #ff8f8f
+XTermMidnight*color10:             #8fffab
+XTermMidnight*color11:             #ffe08f
+XTermMidnight*color12:             #8fb0ff
+XTermMidnight*color13:             #e08fff
+XTermMidnight*color14:             #8fecff
+XTermMidnight*color15:             #ffffff
+XTermMidnight*faceName:            DejaVu Sans Mono
+XTermMidnight*faceSize:            24
+
+
+
 
 !  XTerm Translations, i.e. keyboard remapping.
 !
