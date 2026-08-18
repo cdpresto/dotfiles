@@ -302,7 +302,7 @@ XTermTango*faceSize:            24
 
 ! --- Greenie ---
 XTermGreenie*background:        #048c14
-XTermGreenie*foreground:        #839496
+XTermGreenie*foreground:        #f5f5f5
 XTermGreenie*cursorColor:       #ffffff
 XTermGreenie*color0:            #023309
 XTermGreenie*color1:            #ff5555
