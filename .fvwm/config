@@ -805,6 +805,7 @@ DestroyModuleConfig FvwmClock: *
 AddToFunc StartFunction
 + I Module FvwmButtons FvwmClock
 #+ I Exec exec xrandr --output DisplayPort-1 --primary --mode 3840x2160 --left-of DisplayPort-2 --output DisplayPort-2 --mode 3840x2160 & 
+Exec exec ~/.local/bin/monitor-setup.sh
 + I Exec exec xterm -bg '#000000' -fg '#00FF00' &                     			# Launch a terminal
 + I Exec exec gkrellm 2> /dev/null &                     						# Launch a terminal
 + I Exec exec xeyes -fg blue -outline green -render -distanc 2> /dev/null &     # Launch a terminal
