@@ -4,11 +4,15 @@ case "$(hostname -s)" in
         xrandr --output HDMI-3 --primary --mode 3840x2160 --left-of HDMI-4 \
                --output HDMI-4 --mode 3840x2160
         ;;
-    adl-nuc)
+    server)
         xrandr --output DisplayPort-1 --primary --mode 3840x2160 --left-of DisplayPort-2 \
                --output DisplayPort-2 --mode 3840x2160
         ;;
-    server|fed-nuc|hades-cyn|cdpresto-mobl2)
+    adl-nuc)
+        xrandr --output HDMI-1 --primary --mode 3840x2160 --left-of DP-2 \
+               --output DP-2 --mode 3840x2160
+        ;;
+    fed-nuc|hades-cyn|cdpresto-mobl2)
         # single monitor or headless ¿ nothing to configure yet
         ;;
     *)
