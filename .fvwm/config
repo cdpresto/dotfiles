@@ -644,7 +644,7 @@ DestroyModuleConfig FvwmScript:*
 #
 # Note - To use the system tray you must have "stalonetray" installed.
 DestroyModuleConfig RightPanel:*
-*RightPanel: Geometry 120x$[vp.height]-0+0
+*RightPanel: Geometry 120x$[vp.height]-0+0@0
 *RightPanel: Colorset 10
 *RightPanel: Rows $[vp.height]
 *RightPanel: Columns 120
