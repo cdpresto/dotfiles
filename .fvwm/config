@@ -68,6 +68,12 @@ AddToFunc InitBackground
 + I TestRc (NoMatch) Exec exec fvwm-root \
     $[FVWM_DATADIR]/default-config/images/background/bg1.png
 
+# Funtion to refresh Stalonetray window when it becomes corrupt
+DestroyFunc RefreshTray
+AddToFunc   RefreshTray
++ I Exec xdotool windowunmap $(xdotool search --class stalonetray)
++ I Exec xdotool windowmap $(xdotool search --class stalonetray)
+
 # Mouse Bindings Functions
 DestroyFunc RaiseMoveX
 AddToFunc RaiseMoveX
@@ -537,6 +543,7 @@ Silent Key F2 A C GotoDesk 0 1
 Silent Key F3 A C GotoDesk 0 2
 Silent Key F4 A C GotoDesk 0 3
 Silent Key Super_R A A Exec exec $[infostore.terminal]
+Silent Key F12 A N RefreshTray
 
 # Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #   1 - Open the WindowOps menu.
