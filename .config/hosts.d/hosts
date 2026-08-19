@@ -1,0 +1,15 @@
+127.0.0.1       localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1             localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.1.5     server.prestopine.com   server  server.local
+
+192.168.1.133   cdpresto-mobl2                  cdpresto-mobl2.local
+192.168.1.130   macstudio6                      macstudio6.local
+192.168.1.233   charlesscabinmacbook            charlesscabinmacbook.local
+192.168.1.48    adl-nuc                         adl-nuc.local
+192.168.1.170   cdpresto-desk2                  cdpresto-desk2.local
+192.168.1.191   hades-cyn                       hades-cyn.local
+192.168.1.29    fed-nuc                         fed-nuc.local
+192.168.1.39    imac-lab                        imac-lab.local
+192.168.1.226   garage-pc                       garage-pc.local
+192.168.1.248   fedora                          fedora.local 
