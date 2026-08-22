@@ -819,7 +819,7 @@ Exec exec ~/.local/bin/monitor-setup.sh
 + I Exec exec feh --bg-fill /home/otc/20241109-0F7A6F76-A688-479C-B694-B80001620326_1_201_a.jpg &						# Launch background
 + I Exec exec firefox &                  										# Launch a firefox browser
 + I Exec exec nm-applet &               										# Launch NetworkManager applet
-+ I Exec exec volumeicon &              										# Launch volume control applet
++ I Exec exec pasystray &              										# Launch volume control applet
 + I Exec exec solaar 2> /dev/null &											    # Needed for the mouse to work correctly
 + I Exec exec /bin/msedge 2>/dev/null &								            # Launch the edge browser
 + I Exec exec nautilus -w 2> /dev/null &										# Launch a file manager
