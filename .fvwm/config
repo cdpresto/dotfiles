@@ -671,8 +671,8 @@ DestroyModuleConfig RightPanel:*
 *RightPanel: (120x5, Frame 0)
 #Test (x stalonetray) *RightPanel: (120x20, Swallow(NoClose,UseOld) \
     stalonetray 'Exec exec stalonetray --config \
-    "/home/charles/.fvwm/stalonetrayrc "', Frame 0)
-Test (x stalonetray) Exec exec stalonetray --config "/home/charles/.fvwm/stalonetrayrc"
+    "$HOME/.fvwm/stalonetrayrc "', Frame 0)
+Test (x stalonetray) Exec exec stalonetray --config "$HOME/.fvwm/stalonetrayrc"
 Test (x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-265)), \
     Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
 #Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-205)),\
