@@ -1,0 +1,80 @@
+#!/bin/bash
+
+ICON_DIRS=(
+    /usr/share/icons
+    "$HOME/.local/share/icons"
+)
+
+# Build sorted list of installed icon themes
+mapfile -t THEMES < <(
+    for dir in "${ICON_DIRS[@]}"; do
+        [ -d "$dir" ] && find "$dir" -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
+    done | sort -u
+)
+
+echo
+echo "Nautilus Icon Theme"
+echo "==================="
+echo
+
+for i in "${!THEMES[@]}"; do
+    printf "%2d  %s\n" "$((i + 1))" "${THEMES[$i]}"
+done
+
+echo
+read -rp "Select theme [1-${#THEMES[@]}]: " choice
+
+if ! [[ "$choice" =~ ^[0-9]+$ ]] || (( choice < 1 || choice > ${#THEMES[@]} )); then
+    echo "Invalid selection."
+    exit 1
+fi
+
+THEME="${THEMES[$((choice - 1))]}"
+
+echo
+echo "Icon Size"
+echo "========="
+echo
+echo " 1  small"
+echo " 2  small-plus"
+echo " 3  medium"
+echo " 4  large"
+echo " 5  extra-large"
+echo
+
+read -rp "Select size [1-5]: " size
+
+case "$size" in
+    1) ZOOM="small" ;;
+    2) ZOOM="small-plus" ;;
+    3) ZOOM="medium" ;;
+    4) ZOOM="large" ;;
+    5) ZOOM="extra-large" ;;
+    *)
+        echo "Invalid selection."
+        exit 1
+        ;;
+esac
+
+mkdir -p "$HOME/.config/gtk-4.0"
+
+cat > "$HOME/.config/gtk-4.0/settings.ini" <<SETTINGS
+[Settings]
+gtk-font-name=Noto Sans 10
+gtk-icon-theme-name=$THEME
+SETTINGS
+
+gsettings set org.gnome.nautilus.icon-view default-zoom-level "$ZOOM"
+
+echo
+echo "Theme: $THEME"
+echo "Size:  $ZOOM"
+echo
+echo "Restarting Nautilus..."
+
+nautilus -q 2>/dev/null
+sleep 1
+nautilus >/dev/null 2>&1 &
+
+echo "Done."
+echo
