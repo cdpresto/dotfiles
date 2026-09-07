@@ -377,7 +377,16 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
 
 # Generate XDGMenu
-PipeRead "fvwm-menu-desktop -e"
+#PipeRead "fvwm-menu-desktop -e" #this is the old config line for the xdg menu
+
+# Force only the applications menu, ignore other DE menus
+PipeRead 'fvwm-menu-desktop \
+  --set-menus /etc/xdg/menus/applications.menu \
+  --enable-mini-icons \
+  --size 24 \
+  --with-titles \
+  --include-items both \
+  -e'
 
 # Programs Menu
 #
