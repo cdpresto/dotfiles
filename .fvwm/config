@@ -303,7 +303,7 @@ AddToMenu   MenuUtilities "Utilities" Title
 + "System Monitor (xosview)" Exec exec xosview
 + "Disk Usage" Exec exec xterm -e 'ncdu ~'
 + "System Monitor (htop)" Exec exec xterm -e htop
-+ "Process Tree (pstree)" Exec exec xterm -e pstree -pa
++ "Process Tree (pstree)" Exec exec xterm -hold -e pstree -pa
 + "" Nop
 # Room for more utilities later...
 
