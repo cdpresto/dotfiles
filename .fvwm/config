@@ -829,6 +829,7 @@ AddToFunc StartFunction
 + I Exec exec firefox &                  										# Launch a firefox browser
 + I Exec exec nm-applet &               										# Launch NetworkManager applet
 + I Exec exec pasystray &              										    # Launch volume control applet
++ I Exec exec dunst &              										        # Launch Notification applet
 + I Exec exec solaar 2> /dev/null &											    # Needed for the mouse to work correctly
 + I Exec exec /bin/msedge 2>/dev/null &								            # Launch the edge browser
 + I Exec exec nautilus -w 2> /dev/null &										# Launch a file manager
