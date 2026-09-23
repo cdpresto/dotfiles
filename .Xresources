@@ -31,7 +31,8 @@ XTerm*highlightThickness:       0
 ! Dont automatically jump to the bottom on output, but do on keypress.
 XTerm*scrollTtyOutput:          false
 XTerm*scrollKey:                true
-XTerm*scrollBar:                false
+XTerm*scrollBar:                true
+XTerm*rightScrollBar:           true
 XTerm*eightBitInput:            false
 XTerm*cursorBlink:              true
 ! Dont allow mouse ops - it can be enabled in the view Menu at runtime.
@@ -55,7 +56,7 @@ Xcursor.theme: Adwaita
 XTerm*vt100.geometry:           100x30
 
 ! Scrollback buffer
-xterm*saveLines: 10000
+xterm*saveLines: 100000
 ! end of what charles added
 
 ! Only select text, not empty space around it.
